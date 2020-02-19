@@ -1,8 +1,6 @@
 # Folders
 Epitope/
+anarci-1.3/
 
 #Files
 save-git-pass.sh
-anarci-1.3/build/scripts-2.7/ANARCI
-anarci-1.3/build_pipeline/HMMs/ALL.hmm
-anarci-1.3/build_pipeline/HMMs/ALL.hmm.h3m
