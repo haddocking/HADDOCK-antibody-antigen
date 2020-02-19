@@ -1,19 +1,50 @@
-# Dependencies
-1. python 2.7
-2. R
-2. ANARCI (see installation instructions in the releated file)
-2. HMMER
-3. Biopython
-4. bio3d
-5. optparse
+# HADDOCK-antibody-antigen
 
-Exept for ANARCI the rest can be installed while creating the anaconda enviroment
+Here we provide the code to run the antibody protocol of **HADDOCK** by using the residues belonging to the *Hyper Variable* (HV) loops.
+We use ANARCI (http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/) *[Dunbar, J. et al (2016). Nucleic Acids Res. 44. W474-W478]* to renumber the antibody accoring to the Chothia numbering scheme and to identify the HV loops.
 
-# Command instructions 
+# Installation
+
+The easiest way is using Anaconda (https://www.anaconda.com/distribution/).
+
+``` bash
+git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
+cd HADDOCK-antibody-antigen 
+
+# Create enviroments with all the dependencies
+conda create env 
+
+# Install anarci
+cd anarci-1.3
+python setup.py install
+cd ..
+```
+
+# Requirements
+
+Dependencies can be installed following the instructions or separately withouth using anaconda.
+
+1. python 2.7 (https://www.python.org/)
+2. R (https://www.r-project.org/)
+3. ANARCI (http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/)
+4. HMMER (http://hmmer.org/)
+5. Biopython (https://biopython.org/)
+6. bio3d (http://thegrantlab.org/bio3d/index.php)
+7. optparse (https://github.com/trevorld/r-optparse)
+
+
+# Usage  
 
 ```bash
-cd Ab_modelling
-./ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly  # Renumber antibody with the Chothia scheme
-./match_numbering.R -f 4G6K.pdb -s 4G6K_ch.pdb -c A  # Match the numbering of the original antibody and the Chothia one
-./get-HV.R -i Resno-pdb2.csv  # Extract HV loop residues
+cd HADDOCK-antibody-antigen
+conda activate Ab-HADDOCK
+
+# Renumber antibody with the Chothia scheme
+./ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly  
+
+# Match the numbering of the original antibody and the Chothia one
+./match_numbering.R -f 4G6K.pdb -s 4G6K_ch.pdb -c A  
+
+# Extract HV loop residues
+./get-HV.R -i Resno-pdb2.csv  
 ```
