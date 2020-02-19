@@ -71,7 +71,7 @@ option_list <- list(
               help="Chain id to use for the HADDOCK-formatted structure", metavar="character")
 )
 
-opt_parser <- OptionParser(option_list=option_list, description='This script given a pdb file it formats it in order to be HADDOCK-ready.\nThe output consists of a pdb file HADDOCK-ready and of a .csv file\nwhere the renumbered residues are mapped to the old ones\n\nUSAGE example:\n./HADDOCK-format.R -i 4G6K_ch.pdb -o 4G6K-HADDOCK.pdb -c A')
+opt_parser <- OptionParser(option_list=option_list, description='\nThis script formats the given PDB file order te meet the HADDOCK requirements.\nThe output consists of a PDB file "HADDOCK-ready" and of a .csv file\nwhere the renumbered residues are mapped to the old ones\n\nUSAGE example:\n./HADDOCK-format.R -i 4G6K_ch.pdb -o 4G6K-HADDOCK.pdb -c A')
 
 opt <-  parse_args(opt_parser)
 
