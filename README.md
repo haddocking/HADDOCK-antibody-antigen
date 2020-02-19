@@ -42,9 +42,9 @@ conda activate Ab-HADDOCK
 # Renumber antibody with the Chothia scheme
 ./ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly  
 
-# Match the numbering of the original antibody and the Chothia one
-./match_numbering.R -f 4G6K.pdb -s 4G6K_ch.pdb -c A  
+# Format the antibody in order to fit the HADDOCK format requirements
+./HADDOCK-format.R -i 4G6K_ch.pdb -o 4G6K-HADDOCK.pdb -c A  
 
 # Extract HV loop residues
-./get-HV.R -i Resno-pdb2.csv  
+./get-HV.R -i 4G6K-HADDOCK.csv  
 ```
