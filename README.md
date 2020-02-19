@@ -11,10 +11,10 @@ The easiest way is using Anaconda (https://www.anaconda.com/distribution/).
 git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
 cd HADDOCK-antibody-antigen 
 
-# Create enviroments with all the dependencies
+# Create conda enviroment with all the dependencies
 conda create env 
 
-# Install anarci
+# Install ANARCI
 cd anarci-1.3
 python setup.py install
 cd ..
@@ -22,7 +22,7 @@ cd ..
 
 # Requirements
 
-Dependencies can be installed following the instructions or separately withouth using anaconda.
+Dependencies can be installed using anaconda or following the instructions in the corresponding websites:
 
 1. python 2.7 (https://www.python.org/)
 2. R (https://www.r-project.org/)
