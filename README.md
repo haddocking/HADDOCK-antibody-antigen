@@ -16,7 +16,7 @@ conda env create
 
 # Install ANARCI
 cd anarci-1.3
-python setup.py install
+python2.7 setup.py install
 cd ..
 ```
 
