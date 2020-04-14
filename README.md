@@ -31,7 +31,7 @@ git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
 4. Download and install *HMM 3.3*: http://hmmer.org/
 5. Install the python library: *Biopython*:
 ``` bash
-pip install biopython
+python2.7 -m pip install biopython
 ```
 6. Install the R packages: *Bio3d* and *optparse*:
 ``` bash
@@ -43,7 +43,7 @@ cd ..
 ``` bash
 cd HADDOCK-antibody-antigen
 cd anarci-1.3
-python setup.py install
+python2.7 setup.py install
 cd ..
 cd ..
 ```
@@ -61,14 +61,17 @@ cd ..
 
 ```bash
 cd HADDOCK-antibody-antigen
-conda activate Ab-HADDOCK # [optional] to run only if you have used anaconda 
+conda activate Ab-HADDOCK  # [optional] to run only if you have used anaconda 
 
 # Renumber antibody with the Chothia scheme
-./ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly  
+python2.7 ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly  
 
 # Format the antibody in order to fit the HADDOCK format requirements
-./HADDOCK-format.R -i 4G6K_ch.pdb -o 4G6K-HADDOCK.pdb -c A  
+Rscript HADDOCK-format.R -i 4G6K_ch.pdb -o 4G6K-HADDOCK.pdb -c A  
 
 # Extract HV loop residues
-./get-HV.R -i 4G6K-HADDOCK.csv  
+Rscript get-HV.R -i 4G6K-HADDOCK.csv 
+
+# Deactivate anaconda
+conda deactivate  # [optional] to run only if you have used anaconda 
 ```
