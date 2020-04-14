@@ -12,7 +12,7 @@ git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
 cd HADDOCK-antibody-antigen 
 
 # Create conda enviroment with all the dependencies
-conda create env 
+conda env create 
 
 # Install ANARCI
 cd anarci-1.3
