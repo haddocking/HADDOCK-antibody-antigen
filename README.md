@@ -4,7 +4,7 @@ Here we provide the code to run the antibody protocol of **HADDOCK** by using th
 We use [ANARCI](http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/) *[Dunbar, J. et al (2016). Nucleic Acids Res. 44. W474-W478]* to renumber the antibody according to the Chothia numbering scheme and to identify the HV loops.
 
 # Installation
-#### a. With anaconda
+## a. With anaconda
 The easiest way is using [Anaconda](https://www.anaconda.com/distribution/).
 
 ``` bash
@@ -20,7 +20,7 @@ python setup.py install
 cd ..
 ```
 
-### b. Without Anaconda
+## b. Without Anaconda
 
 1. Clone the repository: 
 ``` bash
