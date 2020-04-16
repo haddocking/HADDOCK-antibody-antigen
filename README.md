@@ -15,9 +15,11 @@ cd HADDOCK-antibody-antigen
 conda env create 
 
 # Install ANARCI
+conda activate Ab-HADDOCK 
 cd anarci-1.3
 python2.7 setup.py install
 cd ..
+conda deactivate
 ```
 
 ## b. Without Anaconda
