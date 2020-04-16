@@ -152,7 +152,7 @@ class AbHaddockFormat:
                 hv_list.append(resno_dict[hv_light])
             else:
                 pass
-
+        hv_list.sort()
         return hv_list, new_pdb
 
 
