@@ -47,7 +47,7 @@ cd ..
 
 # Requirements
 
-1. [python 2.7](https://www.python.org/)
+1. [python 2.7](https://www.python.org/downloads/release/python-2713/)
 2. [HMMER](http://hmmer.org/)
 3. [Biopandas](http://rasbt.github.io/biopandas/)
 4. [Biopython](https://biopython.org/) 
