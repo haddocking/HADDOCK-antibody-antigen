@@ -33,7 +33,7 @@ git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
 4. Install the requirements
 ``` bash
 cd HADDOCK-antibody-antigen 
-python2.7 -m pip install -r requirements.txt
+pip install -r requirements.txt
 cd ..
 ```
 5. Install *ANARCI*
@@ -64,7 +64,7 @@ python2.7 ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly
 
 # Format the antibody in order to fit the HADDOCK format requirements
 # and extract the HV loop residues
-python2.7 haddock-format.R 4G6K_ch.pdb 4G6K-HADDOCK.pdb A 
+python haddock-format.py 4G6K_ch.pdb 4G6K-HADDOCK.pdb A 
 
 # Add END and TER statements to the .pdb file
 pdb_tidy 4G6K-HADDOCK.pdb > oo; mv oo 4G6K-HADDOCK.pdb
