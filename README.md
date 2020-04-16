@@ -5,7 +5,7 @@ We use [ANARCI](http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/) *[
 
 # Installation
 ## a. With anaconda
-The easiest way is using [Anaconda](https://www.anaconda.com/distribution/).
+The easiest way is using [Anaconda](https://www.anaconda.com/distribution/):
 
 ``` bash
 git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
@@ -28,15 +28,15 @@ conda deactivate
 ``` bash
 git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
 ```
-2. Download and install *python 2.7*: https://www.python.org/
+2. Download and install *python 2.7*: https://www.python.org/downloads/release/python-2713/
 3. Download and install *HMM 3.3*: http://hmmer.org/
-4. Install the requirements
+4. Install the required python packages:
 ``` bash
 cd HADDOCK-antibody-antigen 
 pip install -r requirements.txt
 cd ..
 ```
-5. Install *ANARCI*
+5. Install *ANARCI*:
 ``` bash
 cd HADDOCK-antibody-antigen
 cd anarci-1.3
