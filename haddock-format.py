@@ -54,7 +54,7 @@ def check_input():
         sys.stderr.write(emsg)
         sys.exit(1)
 
-    if not args.pdb.end.endswith(".pdb"):
+    if not args.pdb.endswith(".pdb"):
         emsg = 'ERROR!! File {0} not recognize as a PDB file\n'.format(args.pdb)
         sys.stderr.write(emsg)
         sys.exit(1)
@@ -95,25 +95,20 @@ class AbHaddockFormat:
         self.pdb = bp.PandasPdb().read_pdb(self.file)
         self.chain = chain
 
-    def ab_renumb(self, outfile, write=True):
+    def ab_format(self):
         """
         Renumbers the antibody and extract the HV residues
-        If 'write = true' it also writes the new .pdb file
 
-        Args:
-            outfile (str): path to the output .pdb file
-            write (bool): True writes the output file
-            False does not
         Returns:
             hv_list (list): list of the HV residue numbers
-            new_pdb: biopandas object containing the HADDOCK-ready pdb
+            new_pdb (biopandas.pdb.pandas_pdb.PandasPdb): HADDOCK-ready pdb
         """
 
-        # Modify resno to include insertions
+        # Modify resno to include insertions and chain id
         resno = self.pdb.df['ATOM']['residue_number'].values
         ins = self.pdb.df['ATOM']['insertion'].values
         chain = self.pdb.df['ATOM']['chain_id'].values
-        ch_resno = ['{0}{1}_{2}'.format(i, j, c) for i, j, c in zip(resno, ins, chain)]  # resno including insertions
+        ch_resno = ['{0}{1}_{2}'.format(i, j, c) for i, j, c in zip(resno, ins, chain)]
 
         # Create new resno
         count = 0
@@ -136,10 +131,7 @@ class AbHaddockFormat:
         new_pdb.df['ATOM']['residue_number'] = new_resno
         new_pdb.df['ATOM']['insertion'] = ''  # Remove insertions
 
-        if write:
-            new_pdb.to_pdb(path=outfile, records=['ATOM'], append_newline=True)
-
-        # Create data-frame with old and new numbering
+        # Create dictionary with old and new numbering
         resno_dict = dict(zip(unique(ch_resno), unique(new_resno)))
 
         # Collect HV residues with the new numbering
@@ -169,5 +161,10 @@ if __name__ == '__main__':
 
     # Renumber pdb file and get HV residues
     pdb_format = AbHaddockFormat(pdb_file, chain_id)
-    hv_resno, pdb_ren = pdb_format.ab_renumb(outfile=out_file, write=True)
+    hv_resno, pdb_ren = pdb_format.ab_format()
+
+    # Write pdb into a file
+    pdb_ren.to_pdb(path=out_file, records=['ATOM'], append_newline=True)
+
+    # Print HV residues
     print(','.join(map(str, hv_resno)))
