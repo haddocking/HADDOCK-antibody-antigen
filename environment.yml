@@ -4,10 +4,12 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - biopandas=0.2.5
+  - biopandas=0.2.4
   - biopython=1.76
   - hmmer=3.3
-  - pip=19.2.3
+  - pip=19.3.1
   - python=2.7.17
   - pip:
-    -pdb-tools==2.0.1
+      - pdb-tools==2.0.1
+
+
