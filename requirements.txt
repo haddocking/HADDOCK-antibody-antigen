@@ -1,0 +1,3 @@
+biopandas==0.2.5
+biopython==1.76
+pdb-tools==2.0.1

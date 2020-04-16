@@ -1,14 +1,13 @@
 name: Ab-HADDOCK
 channels:
-  - r
   - bioconda
   - conda-forge
   - defaults
 dependencies:
+  - biopandas=0.2.5
   - biopython=1.76
   - hmmer=3.3
   - pip=19.2.3
   - python=2.7.17
-  - r=3.6.0
-  - r-bio3d=2.3_4
-  - r-optparse=1.6.2
+  - pip:
+    -pdb-tools==2.0.1
