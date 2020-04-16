@@ -60,7 +60,7 @@ cd HADDOCK-antibody-antigen
 conda activate Ab-HADDOCK  # [optional] to run only if you have used anaconda 
 
 # Renumber antibody with the Chothia scheme
-python2.7 ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly  
+python2.7 ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly --rename --splitscfv
 
 # Format the antibody in order to fit the HADDOCK format requirements
 # and extract the HV loop residues
