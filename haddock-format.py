@@ -54,6 +54,11 @@ def check_input():
         sys.stderr.write(emsg)
         sys.exit(1)
 
+    if not args.pdb.end.endswith(".pdb"):
+        emsg = 'ERROR!! File {0} not recognize as a PDB file\n'.format(args.pdb)
+        sys.stderr.write(emsg)
+        sys.exit(1)
+
     return args.pdb, args.out, args.chain
 
 
