@@ -10,6 +10,8 @@ Formats the antibody to fit the HADDOCK requirements with the
 specified chain id and returns the list of residues belonging
 to the HV loops defined according to the HADDOCK friendly format.
 
+*** The antibody has to be numbered according to the Chothia scheme ***
+
 Usage:
     python haddock-format.py <chothia numbered antibody> <output .pdb file> <chain_id>
 
@@ -43,9 +45,9 @@ def check_input():
     parser = argparse.ArgumentParser(
         description=USAGE,
         formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('pdb', help='Path to the pdb-file', type=str)
-    parser.add_argument('out', help='Path to the output file', type=str)
-    parser.add_argument('chain', help='Chain id to use for the HADDOCK-formatted structure', type=str)
+    parser.add_argument('pdb', help='Path to the Chothia numbered antibody PDB structure', type=str)
+    parser.add_argument('out', help='Path to the output PDB file', type=str)
+    parser.add_argument('chain', help='Chain id to use for the HADDOCK-formatted PDB structure', type=str)
 
     args = parser.parse_args()
 
