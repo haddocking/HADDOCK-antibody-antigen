@@ -6,6 +6,8 @@ channels:
 dependencies:
   - biopandas=0.2.4
   - biopython=1.76
+  - codecov=2.0.15
+  - coverage=4.5.4
   - hmmer=3.3
   - pip=19.3.1
   - python=2.7.17
