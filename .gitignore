@@ -2,6 +2,7 @@
 Epitope/
 anarci-1.3/
 Old/
+__pycache__/
 
 #Files
 save-git-pass.sh
