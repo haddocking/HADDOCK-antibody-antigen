@@ -76,4 +76,3 @@ pdb_tidy 4G6K-HADDOCK.pdb > oo; mv oo 4G6K-HADDOCK.pdb
 # Deactivate anaconda
 conda deactivate  # [optional] to run only if you have used anaconda 
 ```
-test
