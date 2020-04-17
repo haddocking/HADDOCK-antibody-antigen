@@ -1,3 +1,5 @@
+def COLOR_MAP = ['STARTED': '#3399FF', 'SUCCESS': 'good', 'FAILURE': 'danger', 'UNSTABLE': '#FF8C00', 'ABORTED': '#808080']
+
 pipeline {
   agent {
     docker {
@@ -5,6 +7,16 @@ pipeline {
     }
 
   }
+
+  stage ('Slack notification') {
+        steps{
+        slackSend(channel: 'ab_haddock_protocol',
+        color: COLOR_MAP['STARTED'],
+        message: "*STARTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\nMore info at: ${env.BUILD_URL}")
+        }
+
+    }
+
   stages {
     stage('Install') {
       steps {
@@ -15,6 +27,7 @@ pipeline {
             cd ..'''
       }
     }
+
     stage('Test') {
       steps {
         sh '''#!/bin/bash -ex
@@ -24,10 +37,13 @@ pipeline {
             codecov'''
       }
     }
-    stage('Post') {
-      steps {
-        slackSend(channel: 'ab_haddock_protocol', message: '"*STARTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\\nMore info at: ${env.BUILD_URL}"', color: '#3399FF')
-      }
-    }
   }
+
+  post {
+     always {
+        slackSend(channel: 'ab_haddock_protocol',
+        color: COLOR_MAP[currentBuild.currentResult],
+        message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\nMore info at: ${env.BUILD_URL}")
+      }
+   }
 }
