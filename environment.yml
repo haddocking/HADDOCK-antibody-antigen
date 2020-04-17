@@ -7,6 +7,7 @@ dependencies:
   - biopandas=0.2.4
   - biopython=1.76
   - coverage=5.0
+  - codecov=2.0.19
   - hmmer=3.3
   - pip=19.3.1
   - python=2.7.17
