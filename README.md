@@ -1,4 +1,8 @@
 # HADDOCK-antibody-antigen
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) 
+[![Build Status](http://alembick.science.uu.nl:8080/buildStatus/icon?job=HADDOCK-antibody-antigen%2Fmaster&subject=Build%20duration:%20%24%7Bduration%7D)](http://alembick.science.uu.nl:8080/job/HADDOCK-antibody-antigen/) 
+[![codecov](https://codecov.io/gh/haddocking/HADDOCK-antibody-antigen/branch/master/graph/badge.svg)](https://codecov.io/gh/haddocking/HADDOCK-antibody-antigen)
+
 
 Here we provide the code to run the antibody protocol of **HADDOCK** by using the residues belonging to the *Hyper Variable* (HV) loops.
 We use [ANARCI](http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/) *[Dunbar, J. et al (2016). Nucleic Acids Res. 44. W474-W478]* to renumber the antibody according to the Chothia numbering scheme and to identify the HV loops.
