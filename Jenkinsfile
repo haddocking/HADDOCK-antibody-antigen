@@ -5,8 +5,6 @@ pipeline {
     }
 
   }
-
-
   stages {
     stage('Install') {
       steps {
@@ -17,8 +15,6 @@ pipeline {
             cd ..'''
       }
     }
-
-
     stage('Test') {
       steps {
         sh '''#!/bin/bash -ex
@@ -26,6 +22,11 @@ pipeline {
             python -m coverage run -m unittest discover
             export CODECOV_TOKEN=7261158f-cf74-428f-bb21-157ef8900569
             codecov'''
+      }
+    }
+    stage('Post') {
+      steps {
+        slackSend(channel: 'ab_haddock_protocol', message: '"*STARTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\\nMore info at: ${env.BUILD_URL}"', color: '#3399FF')
       }
     }
   }
