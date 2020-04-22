@@ -6,8 +6,8 @@
 Here we provide the code to run the antibody protocol of **HADDOCK** by using the residues belonging to the *hypervariable* (**HV**) loops.
 We use [ANARCI](http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/) *[Dunbar, J. et al (2016). Nucleic Acids Res. 44. W474-W478]* to renumber the antibody according to the Chothia numbering scheme and to identify the HV loops.
 
-# Installation
-## a. With Anaconda
+## Installation
+### a. With Anaconda
 The easiest way is using [Anaconda](https://www.anaconda.com/distribution/):
 
 ``` bash
@@ -25,7 +25,7 @@ cd ..
 conda deactivate
 ```
 
-## b. Without Anaconda
+### b. Without Anaconda
 
 1. Clone the repository: 
 ``` bash
@@ -48,7 +48,7 @@ cd ..
 cd ..
 ```
 
-# Requirements
+## Requirements
 
 1. [python 2.7](https://www.python.org/downloads/release/python-2713/)
 2. [HMMER](http://hmmer.org/)
@@ -56,7 +56,7 @@ cd ..
 4. [Biopython](https://biopython.org/) 
 5. [pdb-tools](https://github.com/haddocking/pdb-tools)  
 
-# Usage  
+## Usage  
 
 ```bash
 cd HADDOCK-antibody-antigen
