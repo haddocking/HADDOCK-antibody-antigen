@@ -27,19 +27,19 @@ conda deactivate
 
 ### b. Without Anaconda
 
-1. Clone the repository: 
+1.  Clone the repository: 
 ``` bash
 git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
 ```
-2. Download and install *python 2.7*: https://www.python.org/downloads/release/python-2713/
-3. Download and install *HMM 3.3*: http://hmmer.org/
-4. Install the required python packages:
+2.  Download and install *python 2.7*: https://www.python.org/downloads/release/python-2713/
+3.  Download and install *HMM 3.3*: http://hmmer.org/
+4.  Install the required python packages:
 ``` bash
 cd HADDOCK-antibody-antigen 
 pip install -r requirements.txt
 cd ..
 ```
-5. Install *ANARCI*:
+5.  Install *ANARCI*:
 ``` bash
 cd HADDOCK-antibody-antigen
 cd anarci-1.3
@@ -50,11 +50,11 @@ cd ..
 
 ## Requirements
 
-1. [python 2.7](https://www.python.org/downloads/release/python-2713/)
-2. [HMMER](http://hmmer.org/)
-3. [Biopandas](http://rasbt.github.io/biopandas/)
-4. [Biopython](https://biopython.org/) 
-5. [pdb-tools](https://github.com/haddocking/pdb-tools)  
+1.  [python 2.7](https://www.python.org/downloads/release/python-2713/)
+2.  [HMMER](http://hmmer.org/)
+3.  [Biopandas](http://rasbt.github.io/biopandas/)
+4.  [Biopython](https://biopython.org/) 
+5.  [pdb-tools](https://github.com/haddocking/pdb-tools)  
 
 ## Usage  
 
@@ -66,8 +66,8 @@ conda activate Ab-HADDOCK  # [optional] to run only if you have used anaconda
 python2.7 ImmunoPDB.py -i 4G6K.pdb -o 4G6K_ch.pdb --scheme c --fvonly --rename --splitscfv
 
 # Format the antibody in order to fit the HADDOCK format requirements
-# and extract the HV loop residues
-python ab_haddock_format.py 4G6K_ch.pdb 4G6K-HADDOCK.pdb A 
+# and extract the HV loop residues and save them into a file
+python ab_haddock_format.py 4G6K_ch.pdb 4G6K-HADDOCK.pdb A > active.txt
 
 # Add END and TER statements to the .pdb file
 pdb_tidy 4G6K-HADDOCK.pdb > oo; mv oo 4G6K-HADDOCK.pdb
