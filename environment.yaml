@@ -5,7 +5,7 @@ channels:
   - defaults
 dependencies:
   - python=3.9
-  - anarci
+  - anarci=2021.02.04
   - biopandas=0.2.4
   - muscle=3.8.1551
   - biopython=1.79

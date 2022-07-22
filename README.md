@@ -22,28 +22,6 @@ conda env create -f environment.yaml
 conda activate haddock-antibody
 ```
 
-### Without Anaconda (Pip)
-1.  Clone the repository: 
-``` bash
-git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
-```
-2.  Download and install *python 3.9*: https://www.python.org/downloads/release/python-399/
-
-3. Install dependencies and ANARCI using the following code:
-
-```bash
-cd HADDOCK-antibody-antigen
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Install ANARCI
-git clone https://github.com/oxpig/ANARCI.git
-cd ANARCI
-python setup.py install
-cd ..
-```
-
 If you are still using Python 2, please, consider using [older version](https://github.com/haddocking/HADDOCK-antibody-antigen/releases/tag/2020-first-release)
 
 ## Usage
