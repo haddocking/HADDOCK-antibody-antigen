@@ -9,9 +9,7 @@ We use [ANARCI](http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/) _[
 
 ## Installation
 
-### Conda
-
-The easiest way is using [Conda](https://docs.conda.io/en/latest/miniconda.html).
+Install it using [Conda](https://docs.conda.io/en/latest/miniconda.html).
 
 ```bash
 git clone https://github.com/haddocking/HADDOCK-antibody-antigen.git
@@ -59,3 +57,18 @@ conda activate haddock-antibody
 
 python run.py --pdb folder_with_pdbs
 ```
+
+## Limitations
+
+The version of `ImmunoPDB.py` script that we are re-distributing as part of this protocol has some limitations and cannot handle all naming schemes, please se the list below:
+
+- martin ✅
+- chotia ✅
+- imgt ❌
+- kabat ✅
+- aho ❌
+- wolguy ❌
+
+Issues with this script are out of the scope of this repository, please raise an issue at the [ANARCI repository](https://github.com/oxpig/ANARCI/issues) if you have any problems with it.
+
+* * *
