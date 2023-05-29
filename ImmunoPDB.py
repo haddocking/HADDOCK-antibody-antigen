@@ -51,15 +51,6 @@ o CDR recognition is performed and regions are annotated in the xtra dictionary 
 
 o Pairing is performed using the distance between the interface cysteine positions (imgt 104).
 
-Basic useage
-
-Renumber antibody chains with imgt numbering scheme
-python ImmunoPDB.py -i infile.pdb -o outfile.pdb -s imgt
-
-Renumber tcr chains with imgt numbering scheme
-python ImmunoPDB.py -i infile.pdb -o outfile.pdb -s imgt --receptor tr
-
-
 '''
 
 epilogue='''
@@ -1274,7 +1265,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog="ImmunoPDB", description=description, epilog=epilogue,formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument( '-i', type=str, help="A structure to be numbered", dest="inputstructure")
     parser.add_argument( '-o', type=str, default=False, help="The output file to use. Default is stdout", dest="outfile")
-    parser.add_argument( '--scheme','-s', type=str, choices=scheme_names+['pdb'], default="imgt", help="Which numbering scheme should be used. i, k, c, m, w and a are shorthand for IMGT, Kabat, Chothia, Martin (Extended Chothia), Wolfguy and Aho respectively. Default IMGT. Use pdb to retain the numbering but get the annotations as remarks", dest="scheme")
+    parser.add_argument( '--scheme','-s', type=str, choices=["chothia", "c"]+['pdb'], default="imgt", help="Which numbering scheme should be used. i, k, c, m, w and a are shorthand for IMGT, Kabat, Chothia, Martin (Extended Chothia), Wolfguy and Aho respectively. Default IMGT. Use pdb to retain the numbering but get the annotations as remarks", dest="scheme")
     parser.add_argument( '--receptor','-r', type=str, choices=["ig","tr"], default='ig', help="Choose whether to number Antibody (ig) or TCR (tr) domains.", dest="receptor")
     parser.add_argument( '--rename', action='store_true',default=False,help='Rename the receptor chains with H and L (ig) or B and A (tr). Only receptor chains output. First pair identified used.',dest='rename')
     parser.add_argument( '--fvonly', action='store_true',default=False,help='Only output Fv regions.',dest='fvonly')
