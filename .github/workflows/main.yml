@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ubuntu-latest]
+        platform: [ubuntu-22.04]
 
     steps:
       - uses: actions/checkout@v2
