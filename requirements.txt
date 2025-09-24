@@ -3,6 +3,6 @@ biopython==1.79
 coverage==6.2
 codecov==2.1.11
 pytest==6.2.5
-pip==23.3
+pip==25.2
 click==8.0.3
 pdb-tools==2.4.1
